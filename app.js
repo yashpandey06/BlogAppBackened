@@ -16,7 +16,7 @@ const port = process.env.PORT || 8080;
 app.use(express.json());
 
 const uri = process.env.MONGO_URI;
-console.log(uri)
+// console.log(typeof uri)
 try {
     mongoose.connect(uri, {
         useNewUrlParser: true,
@@ -50,8 +50,8 @@ app.use('/login', loginroute)
 app.use('/', homeroute)
 app.use('/auth', authRoute);
 app.use('/upload', postUpload);
-app.use('/upload',getUploadRoute)
-app.use('/user',getUsername)
+app.use('/upload', getUploadRoute)
+app.use('/user', getUsername)
 
 
 app.listen(port, () => {
