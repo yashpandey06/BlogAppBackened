@@ -13,7 +13,7 @@ const port = process.env.PORT || 8080;
 app.use(express.json());
 
 const uri = process.env.MONGO_URI;
-console.log(uri);
+
 try {
   mongoose
     .connect(uri)
