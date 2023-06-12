@@ -9,14 +9,14 @@ const app = express();
 app.use(cookieParser());
 app.use(cors({
     credentials: true,
-    origin: "http://localhost:5173"
+    origin: "https://blog-app-frontend-gold.vercel.app/"
 }));
 
 const port = process.env.PORT || 8080;
 app.use(express.json());
 
 const uri = process.env.MONGO_URI;
-
+console.log(uri)
 try {
     mongoose.connect(uri, {
         useNewUrlParser: true,
