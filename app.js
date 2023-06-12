@@ -7,10 +7,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 app.use(cookieParser());
-app.use(cors({
-    credentials: true,
-    origin: "https://blog-app-frontend-gold.vercel.app/"
-}));
+app.use(cors());
 
 const port = process.env.PORT || 8080;
 app.use(express.json());
