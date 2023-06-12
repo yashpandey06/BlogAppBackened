@@ -178,6 +178,7 @@ async function getUploadRoute(req, res) {
 
 async function getUsername(req, res) {
     const auth = req.headers.authorization;
+    console.log(auth)
 
     try {
         const parts = auth.split(" ");
