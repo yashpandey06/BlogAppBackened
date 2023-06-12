@@ -178,13 +178,15 @@ async function getUploadRoute(req, res) {
 
 async function getUsername(req, res) {
     const auth = req.headers.authorization;
-    console.log(auth)
+    
 
     try {
         const parts = auth.split(" ");
         const token = parts[1];
         const decoded = jwt.verify(token, secretKey);
+        console.log(decoded.username)
         res.status(200).json(decoded.username);
+
     }
     catch (err) {
         res.status(500).json({
