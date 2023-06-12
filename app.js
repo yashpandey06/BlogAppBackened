@@ -10,8 +10,8 @@ app.use(cookieParser());
 app.use(cors({
     origin: 'https://blog-app-frontend-gold.vercel.app',
     credentials: true
-  }));
-  
+}));
+
 
 const port = process.env.PORT || 8080;
 app.use(express.json());
@@ -38,7 +38,7 @@ const loginroute = require('./routes/routes');
 const authRoute = require('./routes/routes');
 const postUpload = require('./routes/routes')
 const getUploadRoute = require('./routes/routes');
-const { getUsername } = require('./contols/userControlls');
+const Username = require('./routes/routes');
 
 
 
@@ -49,7 +49,7 @@ app.use('/', homeroute)
 app.use('/auth', authRoute);
 app.use('/upload', postUpload);
 app.use('/upload', getUploadRoute)
-app.use('/user', getUsername)
+app.use('/user', Username)
 
 
 app.listen(port, () => {
