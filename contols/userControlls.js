@@ -54,7 +54,7 @@ async function postLoginRoute(req, res) {
         if (!user) {
             console.log("User not found redirect to register page.");
             return res.status(401).json({
-                message: "Not registered",
+                message: "User not found redirect to register page.",
             });
         }
 
