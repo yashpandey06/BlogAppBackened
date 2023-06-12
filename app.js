@@ -13,41 +13,37 @@ const port = process.env.PORT || 8080;
 app.use(express.json());
 
 const uri = process.env.MONGO_URI;
-console.log( uri)
+console.log(uri);
 try {
-    mongoose.connect(uri)
-        .then(() => {
-            console.log('Connected to MongoDB');
-            // Start your application or perform other operations
-        })
-        .catch((error) => {
-            console.error('Error connecting to MongoDB:', error);
-        });
+  mongoose
+    .connect(uri)
+    .then(() => {
+      console.log('Connected to MongoDB');
+      // Start your application or perform other operations
+    })
+    .catch((error) => {
+      console.error('Error connecting to MongoDB:', error);
+    });
 } catch (err) {
-    console.log(err);
+  console.log(err);
 }
 
-const testroute = require("./routes/routes");
-const registerroute = require('./routes/routes');
-const homeroute = require('./routes/routes');
-const loginroute = require('./routes/routes');
+const testRoute = require('./routes/routes');
+const registerRoute = require('./routes/routes');
+const homeRoute = require('./routes/routes');
+const loginRoute = require('./routes/routes');
 const authRoute = require('./routes/routes');
-const postUpload = require('./routes/routes')
-const getUploadRoute = require('./routes/routes');
-const { getUsername } = require('./contols/userControlls');
+const { uploadRoute, getUploadRoute, getUsername } = require('./contols/userControlls');
 
-
-
-app.use('/test', testroute);
-app.use('/register', registerroute);
-app.use('/login', loginroute)
-app.use('/', homeroute)
+app.use('/test', testRoute);
+app.use('/register', registerRoute);
+app.use('/login', loginRoute);
+app.use('/', homeRoute);
 app.use('/auth', authRoute);
-app.use('/upload', postUpload);
-app.use('/upload', getUploadRoute)
-app.use('/user', getUsername)
-
+app.use('/upload', uploadRoute);
+app.use('/upload', getUploadRoute);
+app.use('/user', getUsername);
 
 app.listen(port, () => {
-    console.log(`Server started on port: ${port}`);
+  console.log(`Server started on port: ${port}`);
 });
