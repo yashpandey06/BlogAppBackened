@@ -90,10 +90,11 @@ async function getHomeRoute(req, res) {
 }
 
 async function authRoute(req, res) {
-    const { token } = req.req.headers.authorization;
+    const auth = req.headers.authorization;
 
     try {
-
+        const parts = auth.split(" ");
+        const token = parts[1];
         const decoded = jwt.verify(token, secretKey);
         console.log(decoded)
 
@@ -179,7 +180,7 @@ async function getUploadRoute(req, res) {
 
 async function getUsername(req, res) {
     const auth = req.headers.authorization;
-    
+
 
     try {
         const parts = auth.split(" ");
