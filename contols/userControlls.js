@@ -90,11 +90,12 @@ async function getHomeRoute(req, res) {
 }
 
 async function authRoute(req, res) {
-    const { token } = req.cookies;
+    const { token } = req.req.headers.authorization;
 
     try {
 
         const decoded = jwt.verify(token, secretKey);
+        console.log(decoded)
 
         delete decoded.password;
 
