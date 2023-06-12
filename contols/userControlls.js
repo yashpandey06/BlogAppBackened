@@ -75,7 +75,7 @@ async function postLoginRoute(req, res) {
             .cookie("token", token, {
                 maxAge: 3600000,
                 httpOnly: true,
-            })
+            }).status(200)
             .json({ token });
     } catch (err) {
         console.log(err);
