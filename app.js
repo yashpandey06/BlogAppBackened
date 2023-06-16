@@ -39,7 +39,7 @@ const authRoute = require('./routes/routes');
 const postUpload = require('./routes/routes')
 const getUploadRoute = require('./routes/routes');
 const Username = require('./routes/routes');
-
+const render=require('./routes/routes');
 
 
 app.use('/test', testroute);
@@ -50,7 +50,7 @@ app.use('/auth', authRoute);
 app.use('/upload', postUpload);
 app.use('/upload', getUploadRoute)
 app.use('/user', Username)
-
+app.use('/render',render)
 
 app.listen(port, () => {
     console.log(`Server started on port: ${port}`);

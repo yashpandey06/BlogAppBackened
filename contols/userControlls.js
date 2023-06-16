@@ -177,7 +177,25 @@ async function getUploadRoute(req, res) {
 
 
 }
+// rendering users without login
+async function render(req, res) {
 
+
+
+    try {
+        const response = await BlogModel.find();
+        res.status(200).json(response)
+
+    }
+    catch (err) {
+        res.status(500).json({
+            message: "Unable to fetch your posts."
+        })
+    }
+
+
+}
+// 
 async function getUsername(req, res) {
     const auth = req.headers.authorization;
 
@@ -206,6 +224,7 @@ module.exports = {
     authRoute,
     uploadRoute,
     getUploadRoute,
-    getUsername
+    getUsername,
+    render
 
 };

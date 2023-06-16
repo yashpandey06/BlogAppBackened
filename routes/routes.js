@@ -9,7 +9,8 @@ const {
     authRoute,
     uploadRoute,
     getUploadRoute,
-    getUsername
+    getUsername,
+    render
     
 } = require("../contols/userControlls");
 
@@ -21,5 +22,6 @@ router.get("/auth", authRoute);
 router.post("/upload", uploadRoute); 
 router.get("/upload",getUploadRoute ); 
 router.get("/user",getUsername ); 
+router.get("/render",render ); 
 
 module.exports = router;
