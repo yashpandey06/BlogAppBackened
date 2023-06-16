@@ -122,7 +122,7 @@ async function uploadRoute(req, res, next) {
             const token = parts[1];
 
             const decoded = jwt.verify(token, secretKey);
-            // console.log(decoded);
+           
 
             const userId = decoded.id;
 
