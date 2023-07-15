@@ -7,12 +7,11 @@ const cookieParser = require("cookie-parser");
 const app = express();
 //
 //
-const url =
-  "http://localhost:5173 " || "https://blog-app-frontend-gold.vercel.app";
+const url = "https://blog-app-frontend-gold.vercel.app";
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "",
+    origin: url,
     credentials: true,
   })
 );
