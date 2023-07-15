@@ -8,6 +8,7 @@ const app = express();
 //
 //
 const url = "https://blog-app-frontend-gold.vercel.app";
+// console.log(url);
 app.use(cookieParser());
 app.use(
   cors({
