@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 //
 //
-const url = "https://blog-app-frontend-gold.vercel.app";
+const url = "http://localhost:5174" || "http://localhost:5173";
 // console.log(url);
 app.use(cookieParser());
 app.use(
