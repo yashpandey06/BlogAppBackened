@@ -28,14 +28,14 @@ try {
   console.log(err);
 }
 
-const registerroute = require("../server/routes/register.js");
-const homeroute = require("../server/routes/Home.js");
-const loginroute = require("../server/routes/login.js");
-const authRoute = require("../server/routes/auth.js");
-const postUpload = require("../server/routes/upload.js");
-const getUploadRoute = require("../server/routes/upload.js");
-const Username = require("../server/routes/user.js");
-const render = require("../server/routes/render.js");
+const registerroute = require("./routes/register.js");
+const homeroute = require("./routes/Home.js");
+const loginroute = require("./routes/login.js");
+const authRoute = require("./routes/auth.js");
+const postUpload = require("./routes/upload.js");
+const getUploadRoute = require("./routes/upload.js");
+const Username = require("./routes/user.js");
+const render = require("./routes/render.js");
 const BlogPost = require("./models/Post");
 
 app.use("/register", registerroute);

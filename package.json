@@ -97,7 +97,7 @@
     "ms": "^2.0.0",
     "multer": "^1.4.5-lts.1",
     "negotiator": "^0.6.3",
-    "nodemon": "^2.0.22",
+    "nodemon": "^3.0.2",
     "nopt": "^1.0.10",
     "normalize-path": "^3.0.0",
     "oauth": "^0.9.15",
@@ -132,7 +132,7 @@
     "setprototypeof": "^1.2.0",
     "side-channel": "^1.0.4",
     "sift": "^16.0.1",
-    "simple-update-notifier": "^1.1.0",
+    "simple-update-notifier": "^2.0.0",
     "smart-buffer": "^4.2.0",
     "socks": "^2.7.1",
     "sparse-bitfield": "^3.0.3",
@@ -161,7 +161,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
-    "start":"node app.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
