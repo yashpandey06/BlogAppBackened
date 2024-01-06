@@ -5,17 +5,9 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const app = express();
-//
-//
-const url = "http://localhost:5174" || "http://localhost:5173";
-// console.log(url);
+
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: url,
-    credentials: true,
-  })
-);
+app.use(cors());
 
 const port = process.env.PORT || 8080;
 app.use(express.json());
@@ -36,18 +28,16 @@ try {
   console.log(err);
 }
 
-const testroute = require("./routes/routes");
-const registerroute = require("./routes/routes");
-const homeroute = require("./routes/routes");
-const loginroute = require("./routes/routes");
-const authRoute = require("./routes/routes");
-const postUpload = require("./routes/routes");
-const getUploadRoute = require("./routes/routes");
-const Username = require("./routes/routes");
-const render = require("./routes/routes");
+const registerroute = require("../server/routes/register.js");
+const homeroute = require("../server/routes/Home.js");
+const loginroute = require("../server/routes/login.js");
+const authRoute = require("../server/routes/auth.js");
+const postUpload = require("../server/routes/upload.js");
+const getUploadRoute = require("../server/routes/upload.js");
+const Username = require("../server/routes/user.js");
+const render = require("../server/routes/render.js");
 const BlogPost = require("./models/Post");
 
-app.use("/test", testroute);
 app.use("/register", registerroute);
 app.use("/login", loginroute);
 app.use("/", homeroute);
